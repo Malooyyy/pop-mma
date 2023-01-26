@@ -9,7 +9,7 @@ const Header = () => {
 			<header className={styles.header}>
 				<div className={styles.container}>
 					<div className={styles.header_logo}>
-						<h1>Hype Fighting</h1>
+						<a href='/'>Hype Fighting</a>
 					</div>
 					<ul
 						className={

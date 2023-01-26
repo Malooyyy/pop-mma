@@ -7,6 +7,7 @@ const Slider = () => {
 	return (
 		<div className={styles.slider_wrapper}>
 			<Carousel
+				autoPlay
 				infiniteLoop
 				showStatus={false}
 				showIndicators={false}
