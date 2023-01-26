@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import styles from '../Header/Header.module.scss'
 
@@ -11,24 +12,16 @@ const Header = () => {
 					<div className={styles.header_logo}>
 						<a href='/'>Hype Fighting</a>
 					</div>
-					<ul
+					<nav
 						className={
 							nav ? [styles.menu, styles.active].join(' ') : [styles.menu]
 						}
 					>
-						<li>
-							<a href='##'>ТУРНИРЫ</a>
-						</li>
-						<li>
-							<a href='##'>РЕЙТИНГ</a>
-						</li>
-						<li>
-							<a href='##'>БОЙЦЫ</a>
-						</li>
-						<li>
-							<a href='##'>НОВОСТИ</a>
-						</li>
-					</ul>
+						<Link href='/Tournamed'>ТУРНИРЫ</Link>
+						<Link href='/Racking'>РЕЙТИНГ</Link>
+						<Link href='/Fighters'>БОЙЦЫ</Link>
+						<Link href='/News'>НОВОСТИ</Link>
+					</nav>
 					<div onClick={() => setNav(!nav)} className={styles.mobile_btn}>
 						{nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
 					</div>

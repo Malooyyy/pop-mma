@@ -1,7 +1,6 @@
 import Main from '@/components/Main/Main'
 import Slider from '@/components/Slider/Slider'
 import Head from 'next/head'
-import Header from '../components/Header/Header'
 
 export default function Home() {
 	return (
@@ -16,7 +15,6 @@ export default function Home() {
 				/>
 			</Head>
 			<main>
-				<Header />
 				<Slider />
 				<Main />
 			</main>
