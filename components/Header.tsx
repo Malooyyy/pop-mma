@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
-import styles from '../Header/Header.module.scss'
+import styles from '../styles/Header.module.scss'
 import { useRouter } from 'next/router'
 
 const navigation = [
 	{ id: 1, title: 'Home', path: '/' },
-	{ id: 2, title: 'Rankings', path: '/rankings' },
+	{ id: 2, title: 'Rankings', path: '/Rankings' },
+	{ id: 4, title: 'Events', path: '/events' },
+	{ id: 3, title: 'Fighters', path: '/fighters' },
+	{ id: 4, title: 'News', path: '/news' },
 ]
 
 const Header = () => {
@@ -31,9 +34,6 @@ const Header = () => {
 								</p>
 							</Link>
 						))}
-						<Link href='/Tournamed'>ТУРНИРЫ</Link>
-						<Link href='/Fighters'>БОЙЦЫ</Link>
-						<Link href='/News'>НОВОСТИ</Link>
 					</nav>
 					<div onClick={() => setNav(!nav)} className={styles.mobile_btn}>
 						{nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
