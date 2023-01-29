@@ -1,6 +1,15 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 const NotFoundPage = () => {
+	const router = useRouter()
+
+	useEffect(() => {
+		setTimeout(() => {
+			router.push('/')
+		}, 3000)
+	}, [router])
 	return (
 		<div>
 			<h1>Ой...</h1>
