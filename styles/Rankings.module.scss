@@ -36,3 +36,28 @@
 .one_table h4 > span {
 	color: #000;
 }
+
+.table__people > a {
+	margin-right: 20px;
+	text-align: left;
+	letter-spacing: 0.2px;
+	color: #191919;
+	font: bold 14px/1.14 UfcSansCondensedMedium, 'Arial Narrow', Arial, sans-serif;
+	font-stretch: condensed;
+	font: normal 12px/1.43 UfcSansRegular, Arial, sans-serif;
+	font-weight: 700;
+}
+
+.table__people {
+	padding: 6px 0px;
+	display: flex;
+	text-transform: capitalize;
+	color: #585b63;
+	font: normal 12px/1.43 UfcSansRegular, Arial, sans-serif;
+}
+
+.info > img {
+	position: relative;
+	margin: 10px 0px;
+	border-bottom: 1px solid #eee;
+}

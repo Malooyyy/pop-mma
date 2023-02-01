@@ -16,6 +16,55 @@ const Rankings = () => {
 							src='https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_profile_listing_medium_1x/s3/2022-04/98fc7c50-3d1d-4d2e-805f-9b7045edb917%252FVOLKANOVSKI_ALEXANDER_BELT_04-09.png?itok=YV2-kWJL'
 							alt='people'
 						/>
+						<div className={styles.br}></div>
+					</div>
+					{/*  */}
+					<div className={styles.table}>
+						<p className={styles.table__people}>
+							<a>1</a>Islam Makhachev
+						</p>
+						<p className={styles.table__people}>
+							<a>1</a>Kamaru Usman
+						</p>
+						<p className={styles.table__people}>
+							<a>1</a>Islam Makhachev
+						</p>
+						<p className={styles.table__people}>
+							<a>1</a>Islam Makhachev
+						</p>
+						<p className={styles.table__people}>
+							<a>1</a>Islam Makhachev
+						</p>
+						<p className={styles.table__people}>
+							<a>1</a>Islam Makhachev
+						</p>
+						<p className={styles.table__people}>
+							<a>1</a>Islam Makhachev
+						</p>
+						<p className={styles.table__people}>
+							<a>1</a>Islam Makhachev
+						</p>
+						<p className={styles.table__people}>
+							<a>1</a>Islam Makhachev
+						</p>
+						<p className={styles.table__people}>
+							<a>1</a>Islam Makhachev
+						</p>
+						<p className={styles.table__people}>
+							<a>1</a>Islam Makhachev
+						</p>
+						<p className={styles.table__people}>
+							<a>1</a>Islam Makhachev
+						</p>
+						<p className={styles.table__people}>
+							<a>1</a>Islam Makhachev
+						</p>
+						<p className={styles.table__people}>
+							<a>1</a>Islam Makhachev
+						</p>
+						<p className={styles.table__people}>
+							<a>1</a>Islam Makhachev
+						</p>
 					</div>
 				</div>
 			</div>
