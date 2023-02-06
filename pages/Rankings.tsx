@@ -1,13 +1,23 @@
-import axios from 'axios'
+import axios, { AxiosResponse } from 'axios'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import styles from '../styles/Rankings.module.scss'
 const src = 'https://63d62e2ae60d57436974495c.mockapi.io/ufc'
-const Rankings = () => {
+
+interface User {
+	name: string
+	number: number
+}
+
+interface ResponseHeaders {
+	'Content-Type': string
+}
+
+const Rankings = (): unknown => {
 	const [articles, setArticles] = useState([])
 
 	useEffect(() => {
-		axios.get(src).then(data => {
+		axios.get<User, AxiosResponse<User, ResponseHeaders>>(src).then(data => {
 			setArticles(data.data)
 		})
 	}, [])
