@@ -27,7 +27,79 @@ const Rankings = () => {
 						/>
 						<div className={styles.br}></div>
 					</div>
-					{/*  */}
+					{/* 2 */}
+					<div className={styles.table}>
+						{articles.map(article => {
+							return (
+								<>
+									<p className={styles.table__people}>
+										<a href=''>{article.number}</a>
+										{article.name}
+									</p>
+								</>
+							)
+						})}
+					</div>
+				</div>
+				{/* 2 */}
+				<div className={styles.one_table}>
+					<h4>FLYWEIGHT</h4>
+					<div className={styles.info}>
+						<a>BRANDON MORENO</a>
+						<img
+							src='https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_profile_listing_medium_1x/s3/2023-01/MORENO_BRANDON_BELT.png?itok=t9Xb0B4G'
+							alt='people'
+						/>
+						<div className={styles.br}></div>
+					</div>
+					<div className={styles.table}>
+						{articles.map(article => {
+							return (
+								<>
+									<p className={styles.table__people}>
+										<a href=''>{article.number}</a>
+										{article.name}
+									</p>
+								</>
+							)
+						})}
+					</div>
+				</div>
+				{/* 3 */}
+				<div className={styles.one_table}>
+					<h4>BANTAMWEIGHT</h4>
+					<div className={styles.info}>
+						<a>ALJAMAIN STERLING</a>
+						<img
+							src='https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_profile_listing_medium_1x/s3/2022-10/STERLING_ALJAMAIN_BELT_10-22.png?itok=TnJ1WPJu'
+							alt='people'
+						/>
+						<div className={styles.br}></div>
+					</div>
+					<div className={styles.table}>
+						{articles.map(article => {
+							return (
+								<>
+									<p className={styles.table__people}>
+										<a href=''>{article.number}</a>
+										{article.name}
+									</p>
+								</>
+							)
+						})}
+					</div>
+				</div>
+				{/* 4 */}
+				<div className={styles.one_table}>
+					<h4>LIGHTWEIGHT</h4>
+					<div className={styles.info}>
+						<a>ISLAM MAKHACHEV</a>
+						<img
+							src='https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_profile_listing_medium_1x/s3/2022-10/MAKHACHEV_ISLAM_BELTMOCK.png?itok=2C8J7eta'
+							alt='people'
+						/>
+						<div className={styles.br}></div>
+					</div>
 					<div className={styles.table}>
 						{articles.map(article => {
 							return (
