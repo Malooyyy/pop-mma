@@ -1,7 +1,16 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 import styles from '../styles/Rankings.module.scss'
-
+const src = 'https://63d62e2ae60d57436974495c.mockapi.io/ufc'
 const Rankings = () => {
+	const [articles, setArticles] = useState([])
+
+	useEffect(() => {
+		axios.get(src).then(data => {
+			setArticles(data.data)
+		})
+	}, [])
 	return (
 		<div className={styles.container}>
 			<h1>ATHLETE RANKINGS</h1>
@@ -20,51 +29,16 @@ const Rankings = () => {
 					</div>
 					{/*  */}
 					<div className={styles.table}>
-						<p className={styles.table__people}>
-							<a>1</a>Islam Makhachev
-						</p>
-						<p className={styles.table__people}>
-							<a>1</a>Kamaru Usman
-						</p>
-						<p className={styles.table__people}>
-							<a>1</a>Islam Makhachev
-						</p>
-						<p className={styles.table__people}>
-							<a>1</a>Islam Makhachev
-						</p>
-						<p className={styles.table__people}>
-							<a>1</a>Islam Makhachev
-						</p>
-						<p className={styles.table__people}>
-							<a>1</a>Islam Makhachev
-						</p>
-						<p className={styles.table__people}>
-							<a>1</a>Islam Makhachev
-						</p>
-						<p className={styles.table__people}>
-							<a>1</a>Islam Makhachev
-						</p>
-						<p className={styles.table__people}>
-							<a>1</a>Islam Makhachev
-						</p>
-						<p className={styles.table__people}>
-							<a>1</a>Islam Makhachev
-						</p>
-						<p className={styles.table__people}>
-							<a>1</a>Islam Makhachev
-						</p>
-						<p className={styles.table__people}>
-							<a>1</a>Islam Makhachev
-						</p>
-						<p className={styles.table__people}>
-							<a>1</a>Islam Makhachev
-						</p>
-						<p className={styles.table__people}>
-							<a>1</a>Islam Makhachev
-						</p>
-						<p className={styles.table__people}>
-							<a>1</a>Islam Makhachev
-						</p>
+						{articles.map(article => {
+							return (
+								<>
+									<p className={styles.table__people}>
+										<a href=''>{article.number}</a>
+										{article.name}
+									</p>
+								</>
+							)
+						})}
 					</div>
 				</div>
 			</div>
