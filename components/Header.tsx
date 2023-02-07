@@ -7,9 +7,9 @@ import { useRouter } from 'next/router'
 const navigation = [
 	{ id: 1, title: 'Home', path: '/' },
 	{ id: 2, title: 'Rankings', path: '/Rankings' },
-	{ id: 4, title: 'Events', path: '/events' },
+	{ id: 4, title: 'Events', path: '/Events' },
 	{ id: 3, title: 'Fighters', path: '/fighters' },
-	{ id: 4, title: 'News', path: '/news' },
+	{ id: 4, title: 'News', path: '/News' },
 ]
 
 const Header = () => {

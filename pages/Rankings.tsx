@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios'
+import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import styles from '../styles/Rankings.module.scss'
@@ -9,15 +9,11 @@ interface User {
 	number: number
 }
 
-interface ResponseHeaders {
-	'Content-Type': string
-}
-
 const Rankings = (): unknown => {
 	const [articles, setArticles] = useState([])
 
 	useEffect(() => {
-		axios.get<User, AxiosResponse<User, ResponseHeaders>>(src).then(data => {
+		axios.get<User>(src).then(data => {
 			setArticles(data.data)
 		})
 	}, [])
