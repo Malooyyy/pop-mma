@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { FC, useEffect } from 'react'
 
-const NotFoundPage = () => {
+const NotFoundPage: FC = () => {
 	const router = useRouter()
 
 	useEffect(() => {

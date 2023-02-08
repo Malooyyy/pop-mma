@@ -1,6 +1,7 @@
 import styles from '../styles/Main.module.scss'
+import { FC } from 'react'
 
-const Main = () => {
+const Main: FC = () => {
 	return (
 		<>
 			<h1 className={styles.main_title}>

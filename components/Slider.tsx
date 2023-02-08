@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import { FC } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import styles from '../styles/Slider.module.scss'
 
-const Slider = () => {
+const Slider: FC = () => {
 	return (
 		<div className={styles.slider_wrapper}>
 			<Carousel

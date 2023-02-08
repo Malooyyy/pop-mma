@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-const News = () => {
+const News: FC = () => {
 	return <div>News</div>
 }
 

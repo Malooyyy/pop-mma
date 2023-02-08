@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from '../styles/Events.module.scss'
 
-const Events = () => {
+const Events: FC = () => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.basic__wrap}>
