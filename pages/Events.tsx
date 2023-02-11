@@ -8,17 +8,21 @@ interface Props {
 }
 
 const Events: React.FC<Props> = ({ startTime, endTime, onComplete }) => {
-	const [timeLeft, setTimeLeft] = useState(endTime - startTime)
+	const [timeLeft, setTimeLeft] = useState(
+		isNaN(startTime) || isNaN(endTime) ? 1000000000 : endTime - startTime
+	)
 
 	useEffect(() => {
 		const intervalId = setInterval(() => {
 			setTimeLeft(prevTime => {
 				if (prevTime <= 0) {
 					clearInterval(intervalId)
-					onComplete()
+					if (typeof onComplete === 'function') {
+						onComplete()
+					}
 					return 0
 				}
-				return prevTime - 5000
+				return prevTime - 1000
 			})
 		}, 1000)
 		return () => clearInterval(intervalId)
@@ -34,7 +38,7 @@ const Events: React.FC<Props> = ({ startTime, endTime, onComplete }) => {
 			</div>
 			<div className={styles.basic__event}>
 				<div className={styles.basic__timer}>
-					Time left: {timeLeft / 1000} seconds
+					before the start of the event {timeLeft} seconds
 				</div>
 				<div className={styles.basic__show}>
 					<p>FEB 25 (SAT) 8AM ICT FEB 24 (FRI) 8PM EST</p>
