@@ -20,10 +20,11 @@ const Events: React.FC<Props> = ({ targetDate }) => {
 		}
 	}, [targetDate])
 
-	const seconds = Math.floor((timeLeft / 1000) % 60)
-	const minutes = Math.floor((timeLeft / 1000 / 60) % 60)
-	const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24)
-	const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
+	const minutes = timeLeft > 0 ? Math.floor((timeLeft / 1000 / 60) % 60) : 15
+	const hours =
+		timeLeft > 0 ? Math.floor((timeLeft / (1000 * 60 * 60)) % 24) : 12
+	const days = timeLeft > 0 ? Math.floor(timeLeft / (1000 * 60 * 60 * 24)) : 15
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.basic__wrap}>
@@ -37,8 +38,7 @@ const Events: React.FC<Props> = ({ targetDate }) => {
 				<div className={styles.basic__timer}>
 					<div className={styles.basic__title}>COMING SOON</div>
 					<div className={styles.timer__time}>
-						<div>{days}</div>:<div>{hours}</div>:<div>{minutes}</div>:
-						<div>{seconds}</div>
+						<div>{days}</div>:<div>{hours}</div>:<div>{minutes}</div>
 					</div>
 				</div>
 
