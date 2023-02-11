@@ -2,31 +2,28 @@ import React, { useState, useEffect, FC } from 'react'
 import styles from '../styles/Events.module.scss'
 
 interface Props {
-	startTime: number
-	endTime: number
-	onComplete: () => void
+	targetDate: number
 }
 
-const Events: React.FC<Props> = ({ startTime, endTime, onComplete }) => {
-	const [timeLeft, setTimeLeft] = useState(
-		isNaN(startTime) || isNaN(endTime) ? 1000000000 : endTime - startTime
+const Events: React.FC<Props> = ({ targetDate }) => {
+	const [timeLeft, setTimeLeft] = useState<number>(
+		new Date(targetDate).getTime() - Date.now()
 	)
 
 	useEffect(() => {
 		const intervalId = setInterval(() => {
-			setTimeLeft(prevTime => {
-				if (prevTime <= 0) {
-					clearInterval(intervalId)
-					if (typeof onComplete === 'function') {
-						onComplete()
-					}
-					return 0
-				}
-				return prevTime - 1000
-			})
+			setTimeLeft(new Date(targetDate).getTime() - Date.now())
 		}, 1000)
-		return () => clearInterval(intervalId)
-	}, [])
+
+		return () => {
+			clearInterval(intervalId)
+		}
+	}, [targetDate])
+
+	const seconds = Math.floor((timeLeft / 1000) % 60)
+	const minutes = Math.floor((timeLeft / 1000 / 60) % 60)
+	const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24)
+	const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
 	return (
 		<div className={styles.container}>
 			<div className={styles.basic__wrap}>
@@ -38,8 +35,13 @@ const Events: React.FC<Props> = ({ startTime, endTime, onComplete }) => {
 			</div>
 			<div className={styles.basic__event}>
 				<div className={styles.basic__timer}>
-					before the start of the event {timeLeft} seconds
+					<div className={styles.basic__title}>COMING SOON</div>
+					<div className={styles.timer__time}>
+						<div>{days}</div>:<div>{hours}</div>:<div>{minutes}</div>:
+						<div>{seconds}</div>
+					</div>
 				</div>
+
 				<div className={styles.basic__show}>
 					<p>FEB 25 (SAT) 8AM ICT FEB 24 (FRI) 8PM EST</p>
 					<h4>Lumpinee Boxing Stadium, Bangkok</h4>

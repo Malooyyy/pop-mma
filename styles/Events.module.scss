@@ -10,10 +10,29 @@
 }
 
 .basic__timer {
+	padding: 20px;
 	margin-left: 5px;
-	background: rgb(197, 40, 40);
-	width: 680px;
+	background: #f8f8f8;
+	width: 650px;
 	height: 200px;
+	font: 500 12px/2 UfcSansCondensedMedium, 'Arial Narrow', Arial, sans-serif;
+	font-size: 2.5rem;
+	line-height: 1;
+	color: #292a2f;
+}
+
+.basic__title {
+	font-size: 30px;
+	font-weight: 500;
+}
+
+.timer__time {
+	display: flex;
+	padding-top: 20px;
+}
+
+.basic__timer > span {
+	color: #aaa;
 }
 
 .basic__show {
@@ -21,7 +40,7 @@
 	color: #292a2f;
 	margin-left: 5px;
 	background: #facb00;
-	width: 680px;
+	width: 650px;
 	height: 450px;
 }
 
