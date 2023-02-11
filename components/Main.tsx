@@ -1,9 +1,10 @@
 import styles from '../styles/Main.module.scss'
+import Image from 'next/image'
 import { FC } from 'react'
 
 const Main: FC = () => {
 	return (
-		<>
+		<div className='py-10'>
 			<h1 className={styles.main_title}>
 				Последние актуальные новости
 				<br />в мире энергии
@@ -43,7 +44,7 @@ const Main: FC = () => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }
 
